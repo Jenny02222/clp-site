@@ -1,0 +1,814 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Capital Language Partners | 金融・IR開示文書 英文翻訳・監修</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Noto+Serif+JP:wght@300;400&family=Noto+Sans+JP:wght@300;400&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --ink: #1a1a18;
+    --ink-light: #4a4a46;
+    --ink-muted: #8a8a84;
+    --gold: #9a8055;
+    --gold-light: #c4a96e;
+    --cream: #f8f6f0;
+    --cream-dark: #ede9df;
+    --white: #ffffff;
+    --rule: rgba(154, 128, 85, 0.3);
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    font-family: 'Noto Serif JP', serif;
+    background: var(--cream);
+    color: var(--ink);
+    font-weight: 300;
+    line-height: 1.8;
+    overflow-x: hidden;
+  }
+
+  /* ── HEADER ── */
+  header {
+    position: fixed;
+    top: 0; left: 0; right: 0;
+    z-index: 100;
+    padding: 1.5rem 4rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: rgba(248, 246, 240, 0.92);
+    backdrop-filter: blur(8px);
+    border-bottom: 1px solid var(--rule);
+  }
+
+  .logo {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.15rem;
+    font-weight: 400;
+    letter-spacing: 0.12em;
+    color: var(--ink);
+    text-decoration: none;
+  }
+
+  .logo span {
+    color: var(--gold);
+  }
+
+  nav a {
+    font-family: 'Noto Sans JP', sans-serif;
+    font-size: 0.7rem;
+    font-weight: 300;
+    letter-spacing: 0.18em;
+    color: var(--ink-light);
+    text-decoration: none;
+    margin-left: 2.5rem;
+    transition: color 0.3s;
+  }
+
+  /* ── MESSAGE ── */
+  .message {
+    background: var(--cream-dark);
+  }
+
+  .message-body {
+    max-width: 640px;
+  }
+
+  .message-body p {
+    font-size: 0.9rem;
+    color: var(--ink-light);
+    line-height: 2.1;
+    margin-bottom: 1.4rem;
+  }
+
+  .message-body p:last-of-type {
+    margin-bottom: 0;
+  }
+
+  .message-sig {
+    margin-top: 2.5rem;
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1rem;
+    font-style: italic;
+    color: var(--gold);
+    letter-spacing: 0.05em;
+  }
+
+  /* ── AI POLICY ── */
+  .ai-policy {
+    margin-top: 3rem;
+    padding: 2rem 2.5rem;
+    border-left: 2px solid var(--gold);
+    background: var(--white);
+  }
+
+  .ai-policy-label {
+    font-family: 'Noto Sans JP', sans-serif;
+    font-size: 0.62rem;
+    letter-spacing: 0.22em;
+    color: var(--gold);
+    margin-bottom: 0.8rem;
+  }
+
+  .ai-policy p {
+    font-size: 0.8rem;
+    color: var(--ink-muted);
+    line-height: 2;
+  }
+
+  /* ── DISCLAIMER ── */
+  .disclaimer {
+    margin-top: 1.5rem;
+    font-size: 0.75rem;
+    color: var(--ink-muted);
+    font-style: italic;
+    border-top: 1px solid var(--rule);
+    padding-top: 1.5rem;
+  }
+
+  nav a:hover { color: var(--gold); }
+
+  /* ── HERO ── */
+  .hero {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 8rem 4rem 4rem;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .hero::before {
+    content: 'CLP';
+    position: absolute;
+    right: -0.05em;
+    top: 50%;
+    transform: translateY(-50%);
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 28vw;
+    font-weight: 300;
+    color: rgba(154, 128, 85, 0.055);
+    line-height: 1;
+    pointer-events: none;
+    letter-spacing: -0.05em;
+  }
+
+  .hero-eyebrow {
+    font-family: 'Noto Sans JP', sans-serif;
+    font-size: 0.65rem;
+    letter-spacing: 0.25em;
+    color: var(--gold);
+    margin-bottom: 2rem;
+    opacity: 0;
+    animation: fadeUp 0.8s ease forwards 0.2s;
+  }
+
+  .hero-title {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(2.8rem, 6vw, 5.5rem);
+    font-weight: 300;
+    line-height: 1.15;
+    letter-spacing: 0.02em;
+    max-width: 700px;
+    opacity: 0;
+    animation: fadeUp 0.8s ease forwards 0.4s;
+  }
+
+  .hero-title em {
+    font-style: italic;
+    color: var(--gold);
+  }
+
+  .hero-rule {
+    width: 60px;
+    height: 1px;
+    background: var(--gold);
+    margin: 2.5rem 0;
+    opacity: 0;
+    animation: fadeUp 0.8s ease forwards 0.6s;
+  }
+
+  .hero-questions {
+    max-width: 560px;
+    opacity: 0;
+    animation: fadeUp 0.8s ease forwards 0.8s;
+  }
+
+  .hero-questions p {
+    font-size: 0.88rem;
+    color: var(--ink-light);
+    line-height: 2.2;
+    padding-left: 1rem;
+    border-left: 1px solid var(--rule);
+  }
+
+  .hero-cta {
+    margin-top: 3rem;
+    opacity: 0;
+    animation: fadeUp 0.8s ease forwards 1s;
+  }
+
+  .btn {
+    display: inline-block;
+    font-family: 'Noto Sans JP', sans-serif;
+    font-size: 0.68rem;
+    letter-spacing: 0.2em;
+    color: var(--white);
+    background: var(--ink);
+    padding: 1rem 2.5rem;
+    text-decoration: none;
+    transition: background 0.3s, color 0.3s;
+    border: 1px solid var(--ink);
+  }
+
+  .btn:hover {
+    background: var(--gold);
+    border-color: var(--gold);
+  }
+
+  .btn-outline {
+    background: transparent;
+    color: var(--ink);
+    margin-left: 1rem;
+  }
+
+  .btn-outline:hover {
+    background: var(--ink);
+    color: var(--white);
+  }
+
+  /* ── SECTIONS ── */
+  section {
+    padding: 7rem 4rem;
+  }
+
+  .section-inner {
+    max-width: 900px;
+    margin: 0 auto;
+  }
+
+  .section-label {
+    font-family: 'Noto Sans JP', sans-serif;
+    font-size: 0.62rem;
+    letter-spacing: 0.28em;
+    color: var(--gold);
+    margin-bottom: 3rem;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+  }
+
+  .section-label::after {
+    content: '';
+    flex: 1;
+    max-width: 60px;
+    height: 1px;
+    background: var(--gold);
+  }
+
+  .section-title {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(1.8rem, 3.5vw, 2.8rem);
+    font-weight: 300;
+    line-height: 1.3;
+    margin-bottom: 2.5rem;
+  }
+
+  /* ── WHY ── */
+  .why {
+    background: var(--white);
+  }
+
+  .why-body {
+    font-size: 0.92rem;
+    color: var(--ink-light);
+    max-width: 620px;
+    line-height: 2;
+    margin-bottom: 3rem;
+  }
+
+  .strengths {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1px;
+    background: var(--rule);
+    border: 1px solid var(--rule);
+    margin-top: 3rem;
+  }
+
+  .strength-item {
+    background: var(--white);
+    padding: 1.8rem 2rem;
+    display: flex;
+    align-items: flex-start;
+    gap: 1rem;
+  }
+
+  .strength-num {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.4rem;
+    color: var(--gold);
+    font-weight: 300;
+    line-height: 1;
+    flex-shrink: 0;
+    margin-top: 0.1rem;
+  }
+
+  .strength-text {
+    font-size: 0.8rem;
+    color: var(--ink-light);
+    line-height: 1.8;
+  }
+
+  /* ── PHILOSOPHY ── */
+  .philosophy {
+    background: var(--ink);
+    color: var(--cream);
+  }
+
+  .philosophy .section-label {
+    color: var(--gold-light);
+  }
+
+  .philosophy .section-label::after {
+    background: var(--gold-light);
+  }
+
+  .philosophy .section-title {
+    color: var(--cream);
+  }
+
+  .philosophy-quote {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(1.3rem, 2.5vw, 1.9rem);
+    font-style: italic;
+    font-weight: 300;
+    color: var(--gold-light);
+    line-height: 1.6;
+    max-width: 650px;
+    border-left: 2px solid var(--gold);
+    padding-left: 2rem;
+    margin: 2rem 0 2.5rem;
+  }
+
+  .philosophy-body {
+    font-size: 0.88rem;
+    color: rgba(248, 246, 240, 0.65);
+    max-width: 560px;
+    line-height: 2;
+  }
+
+  /* ── SERVICES ── */
+  .services-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 3rem;
+    margin-top: 1rem;
+  }
+
+  .service-col h3 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.3rem;
+    font-weight: 400;
+    margin-bottom: 1.2rem;
+    color: var(--ink);
+  }
+
+  .service-col ul {
+    list-style: none;
+    border-top: 1px solid var(--rule);
+  }
+
+  .service-col ul li {
+    font-size: 0.82rem;
+    color: var(--ink-light);
+    padding: 0.75rem 0;
+    border-bottom: 1px solid var(--rule);
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+  }
+
+  .service-col ul li::before {
+    content: '—';
+    color: var(--gold);
+    font-size: 0.7rem;
+  }
+
+  .service-types {
+    margin-top: 3.5rem;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 1px;
+    background: var(--rule);
+    border: 1px solid var(--rule);
+  }
+
+  .service-type {
+    background: var(--cream);
+    padding: 2rem 1.8rem;
+  }
+
+  .service-type h4 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.1rem;
+    font-weight: 400;
+    margin-bottom: 0.8rem;
+    color: var(--ink);
+  }
+
+  .service-type p {
+    font-size: 0.78rem;
+    color: var(--ink-muted);
+    line-height: 1.9;
+  }
+
+  /* ── TESTIMONIALS ── */
+  .testimonials {
+    background: var(--cream-dark);
+  }
+
+  .testimonial-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+    margin-top: 1rem;
+  }
+
+  .testimonial-card {
+    background: var(--white);
+    padding: 2.5rem;
+    border-top: 2px solid var(--gold);
+  }
+
+  .testimonial-text {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.05rem;
+    font-style: italic;
+    font-weight: 300;
+    line-height: 1.9;
+    color: var(--ink);
+    margin-bottom: 1.5rem;
+  }
+
+  .testimonial-source {
+    font-family: 'Noto Sans JP', sans-serif;
+    font-size: 0.65rem;
+    letter-spacing: 0.15em;
+    color: var(--gold);
+  }
+
+  /* ── CONTACT ── */
+  .contact {
+    background: var(--white);
+  }
+
+  .contact-body {
+    font-size: 0.88rem;
+    color: var(--ink-light);
+    max-width: 500px;
+    line-height: 2;
+    margin-bottom: 3rem;
+  }
+
+  .contact-note {
+    font-size: 0.75rem;
+    color: var(--ink-muted);
+    margin-top: 1.5rem;
+    font-style: italic;
+  }
+
+  .contact-form {
+    max-width: 520px;
+  }
+
+  .form-group {
+    margin-bottom: 1.5rem;
+  }
+
+  .form-group label {
+    display: block;
+    font-family: 'Noto Sans JP', sans-serif;
+    font-size: 0.65rem;
+    letter-spacing: 0.2em;
+    color: var(--ink-muted);
+    margin-bottom: 0.5rem;
+  }
+
+  .form-group input,
+  .form-group textarea {
+    width: 100%;
+    background: var(--cream);
+    border: none;
+    border-bottom: 1px solid var(--rule);
+    padding: 0.8rem 0;
+    font-family: 'Noto Serif JP', serif;
+    font-size: 0.85rem;
+    font-weight: 300;
+    color: var(--ink);
+    outline: none;
+    transition: border-color 0.3s;
+  }
+
+  .form-group input:focus,
+  .form-group textarea:focus {
+    border-color: var(--gold);
+  }
+
+  .form-group textarea {
+    height: 120px;
+    resize: vertical;
+  }
+
+  /* ── FOOTER ── */
+  footer {
+    padding: 2.5rem 4rem;
+    border-top: 1px solid var(--rule);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .footer-logo {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 0.95rem;
+    color: var(--ink-muted);
+    letter-spacing: 0.1em;
+  }
+
+  .footer-copy {
+    font-family: 'Noto Sans JP', sans-serif;
+    font-size: 0.62rem;
+    color: var(--ink-muted);
+    letter-spacing: 0.1em;
+  }
+
+  /* ── ANIMATIONS ── */
+  @keyframes fadeUp {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+
+  .reveal {
+    opacity: 0;
+    transform: translateY(24px);
+    transition: opacity 0.7s ease, transform 0.7s ease;
+  }
+
+  .reveal.visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  /* ── RESPONSIVE ── */
+  @media (max-width: 768px) {
+    header { padding: 1.2rem 1.5rem; }
+    nav { display: none; }
+    .hero { padding: 6rem 1.5rem 3rem; }
+    section { padding: 4rem 1.5rem; }
+    .strengths,
+    .services-grid,
+    .service-types,
+    .testimonial-grid { grid-template-columns: 1fr; }
+    footer { flex-direction: column; gap: 1rem; text-align: center; }
+  }
+</style>
+</head>
+<body>
+
+<!-- HEADER -->
+<header>
+  <a href="#" class="logo">Capital Language <span>Partners</span></a>
+  <nav>
+    <a href="#why">私たちについて</a>
+    <a href="#philosophy">翻訳哲学</a>
+    <a href="#services">サービス</a>
+    <a href="#testimonials">実績</a>
+    <a href="#message">代表者より</a>
+    <a href="#contact">お問い合わせ</a>
+  </nav>
+</header>
+
+<!-- HERO -->
+<section class="hero">
+  <p class="hero-eyebrow">金融・IR開示文書　英文翻訳・監修</p>
+  <h1 class="hero-title">投資家に、<em>正確に</em><br>届く英文を。</h1>
+  <div class="hero-rule"></div>
+  <div class="hero-questions">
+    <p style="font-family:'Noto Sans JP',sans-serif; font-size:0.7rem; letter-spacing:0.2em; color:var(--gold); margin-bottom:1rem; border-left:none; padding-left:0;">IR英文開示文書のご担当様へ</p>
+    <p style="font-size:0.95rem; font-weight:400; color:var(--ink); margin-bottom:1rem; border-left:none; padding-left:0;">IR翻訳・開示文書の英文化でお困りではないですか？</p>
+    <p>
+      海外投資家に御社の価値が正確に伝わっていますか？<br>
+      御社のビジネスの文脈を理解した翻訳を求めていませんか？<br>
+      英文開示を、もっと投資家へのアピールの場にしたいとお考えではないですか？<br>
+      英文開示の査読に、社内のバイリンガル人材の時間が取られていませんか？
+    </p>
+    <p style="margin-top:1.5rem; border-left:none; padding-left:0; font-size:0.82rem; color:var(--gold);">そんな悩みを解決すべく、Capital Language Partnersを創立いたしました。</p>
+  </div>
+  <div class="hero-cta">
+    <a href="#contact" class="btn">お問い合わせ</a>
+    <a href="#services" class="btn btn-outline">サービス詳細</a>
+  </div>
+</section>
+
+<!-- WHY -->
+<section class="why" id="why">
+  <div class="section-inner">
+    <p class="section-label reveal">ABOUT</p>
+    <h2 class="section-title reveal">なぜ<br>Capital Language Partnersなのか</h2>
+    <p class="why-body reveal">
+      一般的な翻訳会社との最大の違いは、<strong>投資家マインドを持つプロが翻訳や査読をする</strong>ことです。創立者は、米国アイビーリーグ大学院のビジネス学位を持ち、外資系証券会社で債券・デリバティブ営業に12年従事した、翻訳業界では稀有な存在です。機関投資家が開示文書のどこを見るか、何を重視するかを熟知しています。現役の同時通訳者として、金融・ビジネスの最前線の言語感覚を常にアップデートしています。ただ言葉を置き換えるのではなく、御社のメッセージを理解し、投資家に正確に届く英文を作ります。
+    </p>
+    <p class="section-label reveal" style="margin-top:3rem; font-size:0.85rem;">Capital Language Partners の持つ強み</p>
+
+    <div class="strengths reveal">
+      <div class="strength-item">
+        <span class="strength-num">01</span>
+        <span class="strength-text">外資系証券会社・債券デリバティブ営業12年の金融実務経験</span>
+      </div>
+      <div class="strength-item">
+        <span class="strength-num">02</span>
+        <span class="strength-text">IR部門での翻訳実務経験</span>
+      </div>
+      <div class="strength-item">
+        <span class="strength-num">03</span>
+        <span class="strength-text">現役同時通訳者としての高い言語精度</span>
+      </div>
+      <div class="strength-item">
+        <span class="strength-num">04</span>
+        <span class="strength-text">米国アイビーリーグ大学院修了</span>
+      </div>
+      <div class="strength-item">
+        <span class="strength-num">05</span>
+        <span class="strength-text">バイリンガルのIR担当者から品質を直接評価された実績</span>
+      </div>
+      <div class="strength-item">
+        <span class="strength-num">06</span>
+        <span class="strength-text">機関投資家が冒頭から引っかかることなく読み進められる、読みやすさを重視した英文作成</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PHILOSOPHY -->
+<section class="philosophy" id="philosophy">
+  <div class="section-inner">
+    <p class="section-label reveal">PHILOSOPHY</p>
+    <h2 class="section-title reveal">翻訳哲学</h2>
+    <blockquote class="philosophy-quote reveal">
+      「ん？これはどういう意味？」と<br>立ち止まらせない英文を。
+    </blockquote>
+    <p class="philosophy-body reveal">
+      機関投資家は多忙です。開示文書を読みながら立ち止まらせてしまうのは、多くの場合、内容の問題ではなく、文章の問題です。Capital Language Partnersは、投資家が冒頭から最後まで引っかかることなく読み進められる英文を、最も重要な品質基準としています。
+    </p>
+  </div>
+</section>
+
+<!-- SERVICES -->
+<section id="services">
+  <div class="section-inner">
+    <p class="section-label reveal">SERVICES</p>
+    <h2 class="section-title reveal">サービス内容</h2>
+
+    <div class="service-types reveal">
+      <div class="service-type">
+        <h4>英訳</h4>
+        <p>日本語の開示文書を、投資家に伝わる自然な英文に翻訳します。多忙な機関投資家がストレスなく読み進められる、流れのある英文を心がけています。</p>
+      </div>
+      <div class="service-type">
+        <h4>リライト</h4>
+        <p>既存の英文開示書を、投資家目線で読みやすく正確な表現に改善します。翻訳会社の訳文を洗練させたい場合にも対応します。</p>
+      </div>
+      <div class="service-type">
+        <h4>監修・査読</h4>
+        <p>翻訳会社や社内で作成した英文の確認・修正を行います。単なるチェックではなく、金融実務経験に基づく具体的なフィードバックをご提供します。</p>
+      </div>
+    </div>
+
+    <div class="services-grid reveal" style="margin-top:3rem;">
+      <div class="service-col">
+        <h3>対応文書</h3>
+        <ul>
+          <li>有価証券報告書</li>
+          <li>決算短信</li>
+          <li>株主総会招集通知</li>
+          <li>IRプレゼンテーション資料</li>
+          <li>決算プレスリリース</li>
+        </ul>
+      </div>
+      <div class="service-col">
+        <h3>業務の流れ</h3>
+        <ul>
+          <li>ご相談・お見積り（無料）</li>
+          <li>文書確認・スケジュール確定</li>
+          <li>翻訳・監修作業</li>
+          <li>フィードバックと納品</li>
+          <li>アフターサポート</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="ai-policy reveal">
+      <p class="ai-policy-label">AI活用と情報管理について</p>
+      <p>翻訳の品質と納期を両立するため、AIツールを補助的に活用しています。その際、必ずセキュアなプランの環境を確保し、さらに固有名詞・社名・数字はすべて仮の記号に置き換えた上で入力し、納品前に元の情報に戻す作業を徹底しています。情報管理には細心の注意を払い、最終的な翻訳品質の責任はすべてCapital Language Partnersが負います。</p>
+    </div>
+
+    <p class="disclaimer reveal">※ 翻訳・査読の対象は文章表現に限ります。数値・財務データの正確性につきましては、必ずクライアント様にてご確認をお願いいたします。</p>
+  </div>
+</section>
+
+<!-- TESTIMONIALS -->
+<section class="testimonials" id="testimonials">
+  <div class="section-inner">
+    <p class="section-label reveal">TESTIMONIALS</p>
+    <h2 class="section-title reveal">お客様の声</h2>
+    <div class="testimonial-grid reveal">
+      <div class="testimonial-card">
+        <p class="testimonial-text">「社内のリソースが逼迫している中、英文開示書をほとんど確認しなくて良い年になりました。担当者として本当に助かりました。」</p>
+        <p class="testimonial-source">大手消費財メーカー・IR部門ご担当者様</p>
+      </div>
+      <div class="testimonial-card">
+        <p class="testimonial-text">「大手会計事務所への依頼と比較して、具体的なフィードバックがあり、費用対効果も大幅に改善されました。コミュニケーションも丁寧で、来年もぜひお願いしたいと思っています。」</p>
+        <p class="testimonial-source">同社・経理財務部門ご担当者様</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- MESSAGE -->
+<section class="message" id="message">
+  <div class="section-inner">
+    <p class="section-label reveal">MESSAGE</p>
+    <h2 class="section-title reveal">代表者より</h2>
+    <div class="message-body reveal">
+      <p>私がこのビジネスを始めた理由は、とてもシンプルです。</p>
+      <p>コロナ禍をきっかけに、副業として日系大手企業様をクライアントとしたIR翻訳・査読の現場に入った際、この分野での良い翻訳者の不在を痛感しました。金融の意味や文脈を理解し、投資家目線で読みやすい英文を書ける人材が、この業界にはあまりにも少ない。決算・株主総会・アニュアルレポートが重なる繁忙期、外部翻訳の品質があまりにも低く、連日深夜まで大部分を書き直し続けた経験は、今でも鮮明に覚えています。このように、英文開示文書においては、開示担当者が外部翻訳の修正に膨大な時間を費やしているのが現状です。</p>
+      <p>内容を理解した人間が翻訳・査読をすることで、その無駄をなくしたい。それがCapital Language Partnersの出発点です。</p>
+      <p>私は大学卒業後、日本の大手企業に勤めた後、米国アイビーリーグ大学院でビジネス学位を取り、外資系証券会社のフロントに12年在籍しました。この、業界では稀有なバックグラウンドが、日本企業様のIR開示の課題に役立つのではと、このビジネスを拡大することに致しました。上記の大手企業様のお仕事では、特にバイリンガルの社員の方々から私の英文を高く評価いただけたことで、この仕事への適性に自信を持ちました。日本企業の文化への理解と金融の専門知識、そして英語力を持ってクライアントに向き合えることが、私の強みだと思っています。</p>
+      <p>「美しい翻訳」より「投資家に伝わる翻訳」、「完璧な文章」より「クライアントの時間を節約する成果物」を届けることが、私の仕事のモットーです。</p>
+      <p class="message-sig">Capital Language Partners 代表</p>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section class="contact" id="contact">
+  <div class="section-inner">
+    <p class="section-label reveal">CONTACT</p>
+    <h2 class="section-title reveal">お問い合わせ</h2>
+    <p class="contact-body reveal">
+      プライバシー保護の観点から、詳細はお問い合わせいただいた後にご案内しております。まずはお気軽にご連絡ください。
+    </p>
+    <div class="contact-form reveal">
+      <div class="form-group">
+        <label>会社名</label>
+        <input type="text" placeholder="株式会社〇〇">
+      </div>
+      <div class="form-group">
+        <label>お名前</label>
+        <input type="text" placeholder="山田 太郎">
+      </div>
+      <div class="form-group">
+        <label>メールアドレス</label>
+        <input type="email" placeholder="your@email.com">
+      </div>
+      <div class="form-group">
+        <label>お問い合わせ内容</label>
+        <textarea placeholder="翻訳をご希望の文書の種類、ご依頼の背景など、お気軽にお書きください。"></textarea>
+      </div>
+      <button class="btn" type="submit">送信する</button>
+      <p class="contact-note">通常2営業日以内にご返信いたします。</p>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <span class="footer-logo">Capital Language Partners</span>
+  <span class="footer-copy">© 2026 Capital Language Partners. All rights reserved.</span>
+</footer>
+
+<script>
+  // Scroll reveal
+  const reveals = document.querySelectorAll('.reveal');
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach((entry, i) => {
+      if (entry.isIntersecting) {
+        setTimeout(() => {
+          entry.target.classList.add('visible');
+        }, 80);
+        observer.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.1 });
+  reveals.forEach(el => observer.observe(el));
+</script>
+
+</body>
+</html>
